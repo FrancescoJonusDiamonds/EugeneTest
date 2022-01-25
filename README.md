@@ -13,6 +13,8 @@ Also, not using Model for now, we cannot use, for example, 'php artisan make:con
 to create automatically our controller using a model. We can still create a CRUD for our controller with the command
 'php artisan make:controller MyController' but this doesn't make any sense, as we are not asked to do store or modify any
 data.
+ALSO, our logic could be probably all created using only Routes components (I don't know only about the api requests creation, as I never saw such a case),
+but I will use also controllers to better show the SOLID structure.
 
 2) I can use Laravel Collective (a package provided by Laravel) to create the form logic, but instead I will create it
 using Blade Components or standard HTML 5.

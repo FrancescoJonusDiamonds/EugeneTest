@@ -21,45 +21,41 @@
         </style>
     </head>
     <body class="antialiased">
-    <!-- Small example of possible other form using Laravel Collective (a package provided by Laravel) to create the form logic -->
-    <!-- {!! Form::open(['action' =>'App\Http\Controllers\DataController@store', 'method' => 'post', 'enctype' => 'multipart/form-data', 'class' => 'container']) !!} -->
 
-    <!-- {!! Form::close() !!} -->
+    <h2>Send a SUM!!!</h2>
 
-    <h2>Add a game</h2>
-
-    <form method="post" action="/games" enctype="multipart/form-data">
+    <form method="post" action="/" enctype="multipart/form-data">
         {{ csrf_field() }}
-        <div class="form-group row">
+        <div>
             <label for="creditcardnumber" class="col-sm-3 col-form-label">Credit Card Number</label>
-            <div class="col-sm-9">
+            <div>
                 <input name="creditcardn" type="text" class="form-control" id="creditcardnumber" placeholder="Credit Card Number">
             </div>
         </div>
-        <div class="form-group row">
+        <div>
             <label for="creditcardname" class="col-sm-3 col-form-label">Credit Card Name</label>
-            <div class="col-sm-9">
+            <div>
                 <input name="creditcardna" type="text" class="form-control" id="creditcardname" placeholder="Credit Card Name">
             </div>
         </div>
-        <div class="form-group row">
+        <div>
             <label for="validuntil" class="col-sm-3 col-form-label">Valid Until</label>
-            <div class="col-sm-9">
+            <div>
                 <input name="validu" type="text" class="form-control" id="validuntil" placeholder="Valid Until">
             </div>
         </div>
-        <div class="form-group row">
+        <div>
             <label for="amounttotransfer" class="col-sm-3 col-form-label">Amount to Transfer</label>
-            <div class="col-sm-9">
+            <div>
                 <input name="amounttot" type="text" class="form-control" id="amounttotransfer"
                        placeholder="Amount to Transfer">
             </div>
         </div>
-        <div class="form-group row">
-            <div class="offset-sm-3 col-sm-9">
+        <div>
+            <div>
                 <button type="submit" class="btn btn-primary">Pay with Nab</button>
             </div>
-            <div class="offset-sm-3 col-sm-9">
+            <div>
                 <button type="submit" class="btn btn-primary">Pay with Anz</button>
             </div>
         </div>
