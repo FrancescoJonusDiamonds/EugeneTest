@@ -3,16 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class FormController extends Controller
 {
 
     public function store()
     {
-        var_dump(request('creditcardn'));
-        var_dump(request('creditcardna'));
-        var_dump(request('validu'));
-        var_dump(request('amounttot'));
+
+
+        $creditcardn = (request('creditcardn'));
+        $creditcardna = (request('creditcardna'));
+        $validu = (request('validu'));
+        $amounttot = (request('amounttot'));
+
+        
+
+        if () {
+
+            return \App::call('bla\bla\ControllerName@functionName');
+
+        } elseif () {
+
+            return \App::call('bla\bla\ControllerName@functionName');
+
+        } else {}
+
     }
 
 }

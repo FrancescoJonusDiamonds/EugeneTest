@@ -53,10 +53,10 @@
         </div>
         <div>
             <div>
-                <button type="submit" class="btn btn-primary">Pay with Nab</button>
+                <button type="submit" class="btn btn-primary" value="NAB">Pay with Nab</button>
             </div>
             <div>
-                <button type="submit" class="btn btn-primary">Pay with Anz</button>
+                <button type="submit" class="btn btn-primary" value="ANZ">Pay with Anz</button>
             </div>
         </div>
     </form>
