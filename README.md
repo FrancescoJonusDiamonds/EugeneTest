@@ -33,4 +33,8 @@ classes to adhere to SOLID.
 
 5) I will now add the PHP unit testing in at least one controller, as requested, and I also have, unfortunately, a strange 
 routing bug that it happened just now.
+The Http facade's fake method allows you to instruct the HTTP client to return dummy responses when requests are made. 
+We will use the Faking Responses possibility of Laravel to faking an answer to our API request, and, in particular,
+we will fake the specific URLs of the two given banks.
+I've used PHPUnit for now, but I can introduce Guzzle possibilities if requested, as it is supported by Laravel.
 

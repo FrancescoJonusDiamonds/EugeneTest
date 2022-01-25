@@ -16,8 +16,14 @@ class SendNABController extends Controller
         $myXML = new SimpleXMLElement('<root/>');
 
         array_walk_recursive($finalArray, array ($myXML, 'addChild'));
+        
+        Http::fake([
 
-        $responseFromNAB = Http::post('http://anz.com', $myXML);
+            'nab.com/*' => Http::response('Hello World', 200, $headers),
+
+        ]);
+
+        $responseFromNAB = Http::post('http://nab.com', $myXML);
 
     }
 }

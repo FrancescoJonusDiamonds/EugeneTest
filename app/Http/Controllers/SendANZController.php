@@ -15,7 +15,13 @@ class SendANZController extends Controller
 
         $myJSON = json_encode($finalArray);
 
-        $responseFromANZ = Http::post('http://anz.com', $myJSON);
+        Http::fake([
+
+            'anz.com/*' => Http::response('Hello World', 200, $headers),
+
+        ]);
+
+       $responseFromANZ = Http::post('http://anz.com', $myJSON);
 
     }
 }
