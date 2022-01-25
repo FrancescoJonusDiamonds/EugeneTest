@@ -9,6 +9,7 @@ class SendNABController extends Controller
 {
     public function send(Request $request) {
 
+        // Here I replace some values of the array that are specific for the case ANZ/NAB
         $replacements = array('cvv' => '000', 'merchant_id' => 123, 'merchant_key' => 'qwerty');
 
         $finalArray = array_replace($request, $replacements);
@@ -16,7 +17,8 @@ class SendNABController extends Controller
         $myXML = new SimpleXMLElement('<root/>');
 
         array_walk_recursive($finalArray, array ($myXML, 'addChild'));
-        
+
+        // Here I order to fake any response from the website we should call
         Http::fake([
 
             'nab.com/*' => Http::response('Hello World', 200, $headers),

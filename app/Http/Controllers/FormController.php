@@ -16,9 +16,10 @@ class FormController extends Controller
         $validu = (request('validu'));
         $amounttot = (request('amounttot'));
 
-        $arrOfGivenDAta = array('card_number' => $creditcardn, 'card_name' => $creditcardna, 'cvv' => 0, 'amount' => 4, 'merchant_id' => 0, 'merchant_key' => 0);
+        // Here I create my Array to pass to the correct controller, and I also create a multidimensional array to create the nesting for the tag "from"
+        $arrOfGivenDAta = array("from" => array('card_number' => $creditcardn, 'card_name' => $creditcardna, 'cvv' => 0), 'amount' => 4, 'merchant_id' => 0, 'merchant_key' => 0);
 
-
+        // I check what button was pressed and I call the correct class, ANZ or NAB
         if ($request->input('action') == "NAB") {
 
             return \App::call("App\Http\SendNABController@send(" . $arrOfGivenDAta . ")");

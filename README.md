@@ -38,3 +38,13 @@ We will use the Faking Responses possibility of Laravel to faking an answer to o
 we will fake the specific URLs of the two given banks.
 I've used PHPUnit for now, but I can introduce Guzzle possibilities if requested, as it is supported by Laravel.
 
+Other IMPORTANT NOTES:
+1) I could possibly adhere more to the SOLID principles using one class to execute the code:
+   $replacements = array('cvv' => '000', 'merchant_id' => 456, 'merchant_key' => 'asdf');
+   $finalArray = array_replace($request, $replacements);
+That is present in the two different classes that manage the creation of the requests for the two given banks.
+However, there is not really a change of logic between the these two pieces of code for the two classes, and creating
+another class will just make it taking again the given parameters and only execute array_replace() and then returning
+the array. It doesn't seem correct to do so.
+
+
