@@ -27,3 +27,10 @@ We can manually write down the route of a new service in the ServiceProvider or 
 have plan to use a database. I will also create some security and checkings logic. I will also request artisan to create
 a PHPUnit test for my main FormController
 'php artisan make:controller FormController --test'
+
+4) I created the logic for the HTTP requests for the API of the two banks, one JSON and one XML. I clearly used two different
+classes to adhere to SOLID.
+
+5) I will now add the PHP unit testing in at least one controller, as requested, and I also have, unfortunately, a strange 
+routing bug that it happened just now.
+

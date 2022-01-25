@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 class FormController extends Controller
 {
 
-    public function store()
+    public function store(Request $request): \Illuminate\Http\JsonResponse
     {
 
 
@@ -17,17 +16,20 @@ class FormController extends Controller
         $validu = (request('validu'));
         $amounttot = (request('amounttot'));
 
-        
+        $arrOfGivenDAta = array('card_number' => $creditcardn, 'card_name' => $creditcardna, 'cvv' => 0, 'amount' => 4, 'merchant_id' => 0, 'merchant_key' => 0);
 
-        if () {
 
-            return \App::call('bla\bla\ControllerName@functionName');
+        if ($request->input('action') == "NAB") {
 
-        } elseif () {
+            return \App::call("App\Http\SendNABController@send(" . $arrOfGivenDAta . ")");
 
-            return \App::call('bla\bla\ControllerName@functionName');
+        } elseif ($request->input('action') == "ANZ") {
 
-        } else {}
+            return \App::call("App\Http\SendANZController@send(" . $arrOfGivenDAta . ")");
+
+        } else {
+            return response()->json(['message' => 'Data not found.'], 404);
+        }
 
     }
 
