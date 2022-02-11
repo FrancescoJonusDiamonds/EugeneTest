@@ -59,3 +59,4 @@ NEW NOTES
 Used mockery and solved the env problem creating a file in the config folder (config/keyConfig) and I add an array being
 returned inside of it containing the environment variable id and key. I then instruct the controller to use the new config
 file to access these variables.
+After any change to the config files, we need to run php artisan config:cache to register the changes.
