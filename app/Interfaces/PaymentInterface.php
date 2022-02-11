@@ -11,6 +11,6 @@ interface PaymentInterface {
      * @return mixed
      */
 
-    public function send(Request $request);
+    public function store(Request $request);
 
 }

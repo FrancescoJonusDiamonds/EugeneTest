@@ -8,7 +8,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 
-abstract class FormController implements PaymentInterface
+class FormController implements PaymentInterface
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
@@ -47,5 +47,4 @@ abstract class FormController implements PaymentInterface
         }
 
     }
-
 }

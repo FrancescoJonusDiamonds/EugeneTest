@@ -19,4 +19,9 @@ class FormControllerTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    /** @test */
+    function mock_call_to_store_check_data_from_env() {
+
+    }
 }
