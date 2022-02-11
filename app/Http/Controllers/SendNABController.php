@@ -27,5 +27,7 @@ class SendNABController extends Controller
 
         $responseFromNAB = Http::post('http://nab.com', $myXML);
 
+        return $myXML;
+
     }
 }

@@ -25,5 +25,7 @@ class SendANZController extends Controller
 
        $responseFromANZ = Http::post('http://anz.com', $myJSON);
 
+       return $myJSON;
+
     }
 }
