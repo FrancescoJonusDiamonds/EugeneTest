@@ -54,3 +54,8 @@ to them the correct values, included the ones stored in the .env configuration p
 for one or both of them, and I will especially mock the creation of one of them, expecting to receive an object with the
 correct values taken from the .env package for that specific class.
 NOTE: I am still using the last 8.x version available for Laravel, not the new earlier versions of 9.x
+
+NEW NOTES
+Used mockery and solved the env problem creating a file in the config folder (config/keyConfig) and I add an array being
+returned inside of it containing the environment variable id and key. I then instruct the controller to use the new config
+file to access these variables.
