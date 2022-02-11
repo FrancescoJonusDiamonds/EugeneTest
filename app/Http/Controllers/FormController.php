@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
-use keyConfig;
+use Illuminate\Support\Facades\Config;
 
 class FormController implements PaymentInterface
 {
@@ -25,8 +25,8 @@ class FormController implements PaymentInterface
         // I check what button was pressed and I call the correct class, ANZ or NAB
         if ($request->input('action') == "NAB") {
 
-            $merchant_id = config('keyConfig.merchant_id_NAB');
-            $merchant_key = config('keyConfig.merchant_key_NAB');
+            $merchant_id = Config::get('keyConfig.merchant_id_NAB');
+            $merchant_key = Config::get('keyConfig.merchant_key_NAB');
 
             // Here I create my Array to pass to the correct controller, and I also create a multidimensional array to create the nesting for the tag "from"
             $arrOfGivenDAta = array("from" => array('card_number' => $creditcardn, 'card_name' => $creditcardna, 'cvv' => 0), 'amount' => 4, 'merchant_id' => $merchant_id, 'merchant_key' => $merchant_key);
@@ -35,8 +35,8 @@ class FormController implements PaymentInterface
 
         } elseif ($request->input('action') == "ANZ") {
 
-            $merchant_id = config('keyConfig.merchant_id_ANZ');
-            $merchant_key = config('keyConfig.merchant_key_ANZ');
+            $merchant_id = Config::get('keyConfig.merchant_id_ANZ');
+            $merchant_key = Config::get('keyConfig.merchant_key_ANZ');
 
             // Here I create my Array to pass to the correct controller, and I also create a multidimensional array to create the nesting for the tag "from"
             $arrOfGivenDAta = array("from" => array('card_number' => $creditcardn, 'card_name' => $creditcardna, 'cvv' => 0), 'amount' => 4, 'merchant_id' => $merchant_id, 'merchant_key' => $merchant_key);

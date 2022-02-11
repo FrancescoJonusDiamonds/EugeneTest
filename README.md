@@ -57,6 +57,6 @@ NOTE: I am still using the last 8.x version available for Laravel, not the new e
 
 NEW NOTES
 Used mockery and solved the env problem creating a file in the config folder (config/keyConfig) and I add an array being
-returned inside of it containing the environment variable id and key. I then instruct the controller to use the new config
-file to access these variables.
+returned inside of it containing the environment variable id and key. I then instruct the FormController to use the new 
+config file to access these variables (use Illuminate\Support\Facades\Config) ($merchant_id = Config::get('keyConfig.merchant_id_NAB');)
 After any change to the config files, we need to run php artisan config:cache to register the changes.
