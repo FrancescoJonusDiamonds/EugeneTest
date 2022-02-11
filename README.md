@@ -47,4 +47,10 @@ However, there is not really a change of logic between the these two pieces of c
 another class will just make it taking again the given parameters and only execute array_replace() and then returning
 the array. It doesn't seem correct to do so.
 
+NEW NOTES FOR EUGENE
 
+I will create the two different classes that extend the interface (contract), as we said, and manage the logic to assign
+to them the correct values, included the ones stored in the .env configuration package. Also, I will create a PHPUnit test
+for one or both of them, and I will especially mock the creation of one of them, expecting to receive an object with the
+correct values taken from the .env package for that specific class.
+NOTE: I am still using the last 8.x version available for Laravel, not the new earlier versions of 9.x

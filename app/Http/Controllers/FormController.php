@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use app\Interfaces\PaymentInterface;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 
-class FormController extends Controller
+abstract class FormController implements PaymentInterface
 {
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function store(Request $request): \Illuminate\Http\JsonResponse
     {
