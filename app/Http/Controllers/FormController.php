@@ -21,15 +21,24 @@ abstract class FormController implements PaymentInterface
         $validu = (request('validu'));
         $amounttot = (request('amounttot'));
 
-        // Here I create my Array to pass to the correct controller, and I also create a multidimensional array to create the nesting for the tag "from"
-        $arrOfGivenDAta = array("from" => array('card_number' => $creditcardn, 'card_name' => $creditcardna, 'cvv' => 0), 'amount' => 4, 'merchant_id' => 0, 'merchant_key' => 0);
-
         // I check what button was pressed and I call the correct class, ANZ or NAB
         if ($request->input('action') == "NAB") {
+
+            $merchant_id = env('MERCHANT_ID_NAB');
+            $merchant_key = env('MERCHANT_KEY_NAB');
+
+            // Here I create my Array to pass to the correct controller, and I also create a multidimensional array to create the nesting for the tag "from"
+            $arrOfGivenDAta = array("from" => array('card_number' => $creditcardn, 'card_name' => $creditcardna, 'cvv' => 0), 'amount' => 4, 'merchant_id' => $merchant_id, 'merchant_key' => $merchant_key);
 
             return \App::call("App\Http\SendNABController@send(" . $arrOfGivenDAta . ")");
 
         } elseif ($request->input('action') == "ANZ") {
+
+            $merchant_id = env('MERCHANT_ID_ANZ');
+            $merchant_key = env('MERCHANT_KEY_ANZ');
+
+            // Here I create my Array to pass to the correct controller, and I also create a multidimensional array to create the nesting for the tag "from"
+            $arrOfGivenDAta = array("from" => array('card_number' => $creditcardn, 'card_name' => $creditcardna, 'cvv' => 0), 'amount' => 4, 'merchant_id' => $merchant_id, 'merchant_key' => $merchant_key);
 
             return \App::call("App\Http\SendANZController@send(" . $arrOfGivenDAta . ")");
 
