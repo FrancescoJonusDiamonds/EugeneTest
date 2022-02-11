@@ -18,4 +18,9 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+    /** @test */
+    public function mock_creation_of_form_controller(){
+
+    }
+
 }
